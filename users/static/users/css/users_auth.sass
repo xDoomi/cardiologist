@@ -1,0 +1,118 @@
+$bg-btn: #dc3545
+$bg-nav: #6c757d
+$font-size: 1rem
+%btn-base
+  display: inline-block
+  transition: all .2s ease
+  margin:
+    left: 10px
+    right: 10px
+  border-color: #fff
+  background-color: transparent
+  &:hover
+    background-color: #fff
+
+.btn-login
+  @extend %btn-base
+
+.btn-signup
+  @extend %btn-base
+
+.btn__link
+  color: #fff
+  &:visited
+    color: #fff
+  transition: all .2s ease
+  &:hover
+    font-size: $font-size * 1.2
+    font-weight: bold
+
+%btn-base:hover .btn__link
+  color: $bg-btn
+
+.title-wrapper
+  margin: 75px 25px 10px 0
+
+// Decorating inputs form
+
+.input-wrapper input
+  border: 1px solid #ccc
+  border-radius: 4px
+  padding: 5px 6px
+  margin-top: 0
+
+%btn-menu-base
+  background-color: transparent
+  border-color: transparent
+
+.user-menu__btn
+  @extend %btn-menu-base
+  display: inline-block
+  transition: all .2s ease
+  font-size: $font-size * 1.2
+  margin:
+    left: 160px
+    right: 10px
+  transition-duration: 0.4s
+  &:hover, &:active
+    @extend %btn-menu-base
+    color: $bg-btn
+    font-size: $font-size * 1.2
+    font-weight: bold
+    background: #ffffff
+  &:focus
+    @extend %btn-menu-base
+    font-weight: bold
+
+.user-menu__panel
+  transition: all .2s ease
+  position: fixed
+  z-index: 100
+  right: 0
+  top: 70px
+  background: $bg-nav
+  width: 320px
+  box-shadow: 10px 0 20px rgba(0,0,0,0.4)
+  color: #FFF
+
+.user-menu__item
+  background: $bg-nav
+  color: #fff
+  text-decoration: none
+  &:hover
+    background: #fff
+    color: $bg-btn
+
+.text-align-center
+  text-align: center
+
+.text-black
+  color: black
+
+.btn-password-change
+  display: inline
+
+.error-text-wrapper
+  border: 1px solid #ccc
+  border-radius: 4px
+  padding: 5px 6px
+  margin:
+    top: 15px
+    bottom: 20px
+
+.card-width-max
+  width: max-content
+
+.btn-inline-block
+  padding-left: 0
+  margin-left: 0
+  display: inline-block
+
+.flex-container-row
+  display: flex
+  flex-direction: row
+
+.flex-container-column
+  display: flex
+  flex-direction: column
+
