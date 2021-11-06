@@ -1,0 +1,63 @@
+{% extends "layout/basic.html" %}
+{% load static %}
+
+
+{% block content %}
+    <div class="container-fluid align-content-center my-lg-5">
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <div class="title-wrapper">
+                    <h2 class="text-middle">Your favourite games:</h2>
+                </div>
+                {% if games %}
+                    <div class="list-group">
+                        {% for game in games %}
+                            <div class="flex-container-row list-group-item"
+                                 aria-current="true" id="favourite_game_block{{ game.id }}">
+                                <a class="flex-container-row list-group-item list-group-item-action"
+                                   aria-current="true" href="{% url 'detail' game.id %}">
+
+                                    <div class="flex-container-column w-100 justify-content-between grid-col-3">
+                                        <h5 class="mb-1 text-middle text-muted">{{ game.name }}</h5>
+                                        <small class="text-muted card-text">{{ game.genres|join:' | '|lower }}</small>
+
+
+                                        <p class="mb-1">{{ game.full_description|truncatewords:6 }}</p>
+                                    </div>
+                                    <small class="">
+                                        <a class="btn btn-danger m-4 mx-lg-2" id="{{ game.id }}">delete</a>
+                                    </small>
+
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="card my-5">
+                        <div class="card-body text-align-center">
+                            There is no games here!
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+    </div>
+
+    <script src="{% static 'board/js/post_button.js' %}"></script>
+    <script>
+        let clicked_element;
+        let url = '{% url 'edit' %}';
+        let csrf_token = '{{ csrf_token }}';
+        document.addEventListener('mouseover', (element) => {
+         clicked_element = element.target;
+         let btn = clicked_element.closest("a");
+         btn.addEventListener('click', () => {
+                sendForm(url, parseInt(btn.id), 'DELETE');
+                changeDeleteBlockState(parseInt(btn.id));
+            });
+         });
+
+    </script>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'board/css/basic.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'users/css/email_auth.css' %}">
+</head>
+<body>
+<div class="container-fluid">
+    <h2 class="title-wrapper">Hello <i class="text">{{ username }}</i>! Please, click on the link to activate your account:</h2>
+    <div class="link-wrapper"><a href="{{ activation_link }}">{{ activation_link }}</a></div>
+</div>
+</body>
+</html>
+

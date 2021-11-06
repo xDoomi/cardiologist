@@ -1,0 +1,30 @@
+{% extends "layout/basic.html" %}
+{% load static %}
+
+
+{% block title %}Confirmation{% endblock %}
+
+{% block content %}
+    <div class="container-fluid align-content-center my-lg-5">
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <div class="card text-center">
+                    <div class="card-header">
+                        Confirmation
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ title }}</h5>
+                        <p class="card-text text-black">{{ text }}</p>
+                        <a{% if btn_url_name == 'reactivation' %}
+                             href="{% url btn_url_name user.id %}"
+                            {% else %}
+                             href="{% url btn_url_name %}"
+                        {% endif %}class="btn btn-primary btn-danger">{{ btn_name }}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+    </div>
+{% endblock %}

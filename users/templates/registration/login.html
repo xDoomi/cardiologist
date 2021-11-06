@@ -1,0 +1,54 @@
+{% extends 'layout/basic.html' %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'admin/css/forms.css' %} "/>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% if nextstep %}
+            <div class="row">
+                <div class="card my-5">
+                    <div class="card-body text-align-center">
+                        Hey, check your email. A confirmation letter has been sent!
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4 text-align-center">
+                <div class="title-wrapper">
+                    <h2 class="text-middle">Log In</h2>
+                </div>
+                <form method="post" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    {% if form.non_field_errors %}
+                        <div class="error-text-wrapper">{{ form.non_field_errors }}</div>
+                    {% endif %}
+                    <div class="field-wrapper">
+                        {% if form.username.errors %}
+                            <div class="error-text-wrapper">{{ form.username.errors }}</div>
+                        {% endif %}
+                        <label for="{{ form.username.id_for_label }}">Username:</label>
+                        <div class="input-wrapper">{{ form.username }}</div>
+                    </div>
+                    <div class="field-wrapper ">
+                        {% if form.password.errors %}
+                            <div class="error-text-wrapper">{{ form.password.errors }}</div>
+                        {% endif %}
+                        <label for="{{ form.password.id_for_label }}">Password:</label>
+                        <div class="input-wrapper">{{ form.password }}</div>
+                    </div>
+                    <div class="align-items-center">
+                        <button class="btn btn-danger m-4 mx-lg-2" type="submit">Log In</button>
+                        <a class="btn btn-light m-4 mx-lg-2 border-danger" href="{% url 'password_reset' %}">Reset
+                            password</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

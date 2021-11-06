@@ -1,0 +1,27 @@
+{% load url_replace %}
+
+<div class="container-fluid">
+        <ul class="pagination">
+        {% if page_obj.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?{% url_replace 'page' page_obj.previous_page_number %}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+        {% endif %}
+            {% for page_number in page_numbers %}
+                {% if page_number == page_obj.number %}
+                <li class="page-item"><a class="page-link active">{{ page_number }}</a></li>
+                {% else %}
+                <li class="page-item"><a class="page-link" href="?{% url_replace 'page' page_number %}">{{ page_number }}</a></li>
+                {% endif %}
+            {% endfor %}
+        {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="{% url_replace 'page' page_obj.next_page_number %}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        {% endif %}
+        </ul>
+</div>
