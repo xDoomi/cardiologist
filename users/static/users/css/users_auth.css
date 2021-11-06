@@ -1,0 +1,125 @@
+.btn-signup, .btn-login {
+  display: inline-block;
+  transition: all 0.2s ease;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-color: #fff;
+  background-color: transparent;
+}
+.btn-signup:hover, .btn-login:hover {
+  background-color: #fff;
+}
+
+.btn__link {
+  color: #fff;
+  transition: all 0.2s ease;
+}
+.btn__link:visited {
+  color: #fff;
+}
+.btn__link:hover {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.btn-login:hover .btn__link, .btn-signup:hover .btn__link {
+  color: #dc3545;
+}
+
+.title-wrapper {
+  margin: 75px 25px 10px 0;
+}
+
+.input-wrapper input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px 6px;
+  margin-top: 0;
+}
+
+.user-menu__btn:focus, .user-menu__btn:hover, .user-menu__btn:active, .user-menu__btn {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.user-menu__btn {
+  display: inline-block;
+  transition: all 0.2s ease;
+  font-size: 1.2rem;
+  margin-left: 160px;
+  margin-right: 10px;
+  transition-duration: 0.4s;
+}
+.user-menu__btn:hover, .user-menu__btn:active {
+  color: #dc3545;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: #ffffff;
+}
+.user-menu__btn:focus {
+  font-weight: bold;
+}
+
+.user-menu__panel {
+  transition: all 0.2s ease;
+  position: fixed;
+  z-index: 100;
+  right: 0;
+  top: 70px;
+  background: #6c757d;
+  width: 320px;
+  box-shadow: 10px 0 20px rgba(0, 0, 0, 0.4);
+  color: #FFF;
+}
+
+.user-menu__item {
+  background: #6c757d;
+  color: #fff;
+  text-decoration: none;
+}
+.user-menu__item:hover {
+  background: #fff;
+  color: #dc3545;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-black {
+  color: black;
+}
+
+.btn-password-change {
+  display: inline;
+}
+
+.error-text-wrapper {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px 6px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.card-width-max {
+  width: max-content;
+}
+
+.btn-inline-block {
+  padding-left: 0;
+  margin-left: 0;
+  display: inline-block;
+}
+
+.flex-container-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-container-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=users_auth.css.map */

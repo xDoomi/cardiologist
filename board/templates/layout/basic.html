@@ -15,13 +15,13 @@
 
 </head>
 <body>
-<nav class="navbar navbar-light bg-danger nav">
+<nav class="navbar navbar-light bg-secondary nav">
     <div class="container-fluid ">
             <div class="col-lg-4">
                 <a class="navbar-brand text-white font-monospace" href="{% url 'main' %}">
-                    <img src="{% static 'board/img/logo.png' %}" alt="" width="30" height="24"
+                    <img src="{% static 'board/img/logo.png' %}" alt="" width="30"
                          class="d-inline-block align-text-top">
-                    GameMuster
+                    Cardiologist
                 </a>
             </div>
             <div class="col-lg-4 text-align-center">
@@ -46,9 +46,7 @@
                 <div class="collapse" id="collapseExample">
                     <div class="list-group user-menu__panel">
                         <a class="list-group-item list-group-item-action user-menu__item " href="{% url 'profile' %}">Profile</a>
-                        <a class="list-group-item list-group-item-action user-menu__item " href="{% url 'favourite' %}">Favorites</a>
-                        <a class="list-group-item list-group-item-action user-menu__item item-link"
-                           href="#">Settings</a>
+                        <a class="list-group-item list-group-item-action user-menu__item " href="{% url 'history' %}">History</a>
                     </div>
                 </div>
             </div>
